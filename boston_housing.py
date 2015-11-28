@@ -189,7 +189,7 @@ def fit_predict_model(city_data):
 
     # 2. Use gridsearch to fine tune the Decision Tree Regressor and find the best model
     # http://scikit-learn.org/stable/modules/generated/sklearn.grid_search.GridSearchCV.html#sklearn.grid_search.GridSearchCV
-    reg = GridSearchCV(regressor, parameters ,scoring=mse_scorer)
+    reg = GridSearchCV(regressor, parameters ,scoring=mse_scorer, cv=5)
     
     # Fit the learner to the training data
     print "Final Model: "
